@@ -168,23 +168,21 @@ Based on the statistics from section 4, SVM provides the best performance withou
 
 Support Vector Machines are based on the concept of decision lines that define decision boundaries. A decision line is one that separates between different sets of objects. In other words, given labeled training data as is in this supervised learning case, the algorithm outputs a clear divide that categorizes new examples. SVM chooses the best decision line or divide where the distance between that line and the nearest observations of differing classes are the largest. 
 
-Furthermore, SVMs can employ the use of kernels to fit the data in a higher dimensional space to convert a linear classifier into a more complex nonlinear decision line. Think of this decision boundary as being oddly shaped much like the borders of West Virginia in the US as opposed to being a straight line like the y-axis separating negative and positive x values on an x vs y graph. The right circle in the above image illustrates this non-linear decision line. The use of kernels lends the model the necessary flexibility to learn from complex datasets and enhance its predictive outcomes.
-
-The chosen SVM model was tuned using Grid Search and Stratified Shuffle Split because the data set is small and unbalanced. Also, in such a case where the data is unbalanced, an F1 score is a better metric than accuracy. The parameters optimized were `gamma`,`C` and `tolerance`. I attempted to use optimize over a more exhaustive grid with multiple kernels, but due to timeout issues with ipython notebook, I stuck with the two aforementioned parameters. Nevertheless, satisfactory F1 score of 0.853 on the test sets where obtained, which was better than the default model.
+Furthermore, SVMs can employ the use of kernels to fit the data in a higher dimensional space to convert a linear classifier into a more complex nonlinear decision line. The chosen SVM model was tuned using Grid Search and Stratified Shuffle Split because the data set is small and unbalanced. Also, in such a case where the data is unbalanced, an F1 score is a better metric than accuracy. The parameters optimized were `gamma`,`C` and `tolerance`. I attempted to use optimize over a more exhaustive grid with multiple kernels, but due to timeout issues with ipython notebook, I stuck with the two aforementioned parameters. Nevertheless, satisfactory F1 score of 0.813 on the test sets where obtained, which was better than the default model.
 
 ```
 
-SVC(C=200, cache_size=200, class_weight=None, coef0=0.0, degree=3,
+SVC(C=100, cache_size=200, class_weight=None, coef0=0.0, degree=3,
   gamma=0.001, kernel='rbf', max_iter=-1, probability=False,
   random_state=None, shrinking=True, tol=0.001, verbose=False)
 Predicting labels using SVC...
 Done!
-Prediction time (secs): 0.005
-F1 score for training set: 0.881670533643
+Prediction time (secs): 0.004
+F1 score for training set: 0.880361173815
 Predicting labels using SVC...
 Done!
-Prediction time (secs): 0.002
-F1 score for test set: 0.853146853147
+Prediction time (secs): 0.001
+F1 score for test set: 0.816326530612
 
 ```
 
